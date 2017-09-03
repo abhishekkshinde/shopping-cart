@@ -1,0 +1,60 @@
+.cartPage{
+    height: 90%;
+    width: 80%;
+    border: 1px solid;
+    margin: 5% 10% 5% 10%;
+
+}
+
+.cartLines{
+    height: 80%;
+}
+.itemInput{
+    width: 30%;
+    border-radius: 5%;
+    border: 1px solid grey;
+    margin-right: 2%; 
+}
+.addForm{
+    margin: 1%;
+    display: inline-flex;
+    width: 100%;
+}
+.accordian{
+    padding-bottom: 1%;
+    display: flex;
+}
+
+.button-list{
+    height: 15%;
+    border-top: solid 3px #e5e5e5;
+}
+.removeButton{
+    margin-top: 150%;
+    display: flex;
+    height: 20%;
+    background-color: transparent;
+    border: none;
+}
+.button1{
+    width: 30%;
+    margin: 5%;
+    font-size: 1.2em;
+    background-color: white;
+    border: 1px solid;
+}
+
+.button2{
+    width: 30%;
+    margin: 5%;
+    font-size: 1.2em;
+    background-color: orangered;
+    border: 1px solid;
+    color: white;
+}
+.cartStyle{
+    width: 60%;
+}
+.rightBox{
+    border-top: solid 3px #e5e5e5;
+}

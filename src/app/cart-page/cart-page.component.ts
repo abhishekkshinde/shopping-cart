@@ -1,5 +1,6 @@
 import { Component, OnInit, EventEmitter } from '@angular/core';
 import { ItemService } from './../services/item.service';
+import { CartService } from './../services/cart.service';
 import { Cart } from './../models/cart-model';
 import { CartItem } from './../models/cart-item';
 
@@ -11,15 +12,10 @@ import { CartItem } from './../models/cart-item';
 export class CartPageComponent implements OnInit {
   itemID : string = "";
   cart: Cart;
-  constructor(public itemService: ItemService) { 
+  constructor(public itemService: ItemService, public cartService: CartService) { 
     this.cart = new Cart();
-    this.cart.cartLines[0] = new CartItem();
-    this.cart.cartLines[0].item = this.itemService.sampleItems[0];
-    this.cart.cartLines[0].itemQty = 2;
-    this.cart.cartLines[1] = new CartItem();
-    this.cart.cartLines[1].item = this.itemService.sampleItems[1];
-    this.cart.cartLines[1].itemQty = 3;
-
+    this.cart = this.cartService.createCart(this.cart);
+    console.log(this.cart);
   }
   
   ngOnInit() {
@@ -36,8 +32,10 @@ export class CartPageComponent implements OnInit {
         this.cart.cartLines.push(newCartItem);
       }
     }
+    this.cartService.saveCartInSession(this.cart);
   }
   remove(i){
     this.cart.cartLines.splice(i,1);
+    this.cartService.saveCartInSession(this.cart);
   }
 }

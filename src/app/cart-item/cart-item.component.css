@@ -1,6 +1,6 @@
 .itemImage{
-    width: 10%;
-    height: 10%;
+    width: 25%;
+    height: 25%;
 }
 .itemDetails{
     display: inline-flex;
@@ -10,4 +10,13 @@
 }
 .itemPrice{
     margin-top: 14%;
+}
+.cartLine{
+    border-top: solid 3px #e5e5e5;
+}
+.qtydetails{
+    display: flex;
+}
+.numberWidth{
+    width: 5%;
 }

@@ -1,11 +1,18 @@
-<form (ngSubmit)="addItem()" #cartForm>
-    <input placeholder="Enter Item details to add" [(ngModel)]="itemID" name="itemDetail">
-    <input type="submit" />
-</form>
-<div> My Cart({{cart.cartLines.length}})</div>
-<div *ngFor="let cartLine of cart.cartLines; let i =index">
-    <cart-item [cartItem]="cartLine" ></cart-item>
-    <button (click)="remove(i)">Remove</button>
-</div>
-<button>Continue Shopping</button>
-<button> PLACE ORDER </button>
+<div class="cartPage">
+    <form (ngSubmit)="addItem()" #cartForm class="addForm">
+        <input placeholder="Enter Item details to add" [(ngModel)]="itemID" name="itemDetail" class="itemInput">
+        <input type="submit" value="Add" />
+    </form>
+    <div style="margin-left:1%;"> MY CART({{cart.cartLines.length}})</div>
+    <div class="cartLines">
+        <div *ngFor="let cartLine of cart.cartLines; let i =index" class="accordian">
+            <cart-item [cartItem]="cartLine" class="cartStyle" [cart]="cart"></cart-item>
+            <div class="rightBox"><button (click)="remove(i)" class="removeButton">Remove</button></div>
+        </div>
+        <div *ngIf="cart.cartLines.length == 0"> No items present in the cart</div>
+    </div>
+    <div class="button-list">
+    <button class="button1">Continue Shopping</button>
+    <button class="button2"> PLACE ORDER </button>
+    </div>
+<div>

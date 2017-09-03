@@ -9,6 +9,7 @@ import { Cart } from './../models/cart-model';
 })
 export class CartItemComponent implements OnInit {
   @Input() cartItem: CartItem;
+  @Input() cart: Cart;
   
   constructor(public cartService: CartService) { 
     console.log(this.cartItem);
@@ -19,9 +20,14 @@ export class CartItemComponent implements OnInit {
 
   increaseQty(){
     this.cartItem.itemQty++;
+    this.cartService.saveCartInSession(this.cart);
   }
 
   decreaseQty(){
     this.cartItem.itemQty--;
+    this.cartService.saveCartInSession(this.cart);
+  }
+  saveQty(){
+    this.cartService.saveCartInSession(this.cart);
   }
 }

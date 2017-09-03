@@ -1,14 +1,14 @@
-<div>
+<div class="cartLine">
     <div class="itemDetails">
         <img src="{{cartItem.item.itemImage}}" alt="" class="itemImage">
         <div>
             <div class="itemDesc">{{cartItem.item.itemDesciption}}</div>
-            <div class="itemPrice"> {{cartItem.item.itemPrice}} </div>
+            <div class="itemPrice">Rs. {{cartItem.item.itemPrice}} </div>
         </div>
     </div>
-    <div>
+    <div class="qtydetails">
         <img src="/assets/minus.png" (click)="decreaseQty()"/>
-        <input type="number" value="{{cartItem.itemQty}}"/>
+        <input type="number" value="{{cartItem.itemQty}}" class="numberWidth" (keyup)="saveQty()"/>
         <img src="/assets/plus.png" (click)="increaseQty()"/>
     </div>
 

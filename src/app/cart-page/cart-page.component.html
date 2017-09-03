@@ -1,0 +1,11 @@
+<form (ngSubmit)="addItem()" #cartForm>
+    <input placeholder="Enter Item details to add" [(ngModel)]="itemID" name="itemDetail">
+    <input type="submit" />
+</form>
+<div> My Cart({{cart.cartLines.length}})</div>
+<div *ngFor="let cartLine of cart.cartLines; let i =index">
+    <cart-item [cartItem]="cartLine" ></cart-item>
+    <button (click)="remove(i)">Remove</button>
+</div>
+<button>Continue Shopping</button>
+<button> PLACE ORDER </button>

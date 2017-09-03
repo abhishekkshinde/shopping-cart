@@ -1,0 +1,13 @@
+.itemImage{
+    width: 10%;
+    height: 10%;
+}
+.itemDetails{
+    display: inline-flex;
+}
+.itemDesc{
+    margin-top: 5%;
+}
+.itemPrice{
+    margin-top: 14%;
+}
